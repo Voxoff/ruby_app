@@ -27,10 +27,6 @@ RSpec.describe LogParser do
       expect_any_instance_of(described_class).to receive(:analyse_logs)
       subject
     end
-
-    it 'produces the correct data structure and visit counts' do
-      expect(subject.visits).to eq expected_results
-    end
   end
 
   describe '#sort_visits_by' do
@@ -57,6 +53,12 @@ RSpec.describe LogParser do
         add_unique_visit
         expect(subject.visits).to eq expected_results
       end
+    end
+  end
+
+  describe '#analyse_logs' do
+    it 'should create correct data output' do
+      expect(subject.visits).to eq expected_results
     end
   end
 
