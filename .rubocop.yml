@@ -1,0 +1,6 @@
+# Rspec is a DSL which requires long blocks
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+# Hide warnings for sake of test clarity
+AllCops:
+  NewCops: enable
